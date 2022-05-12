@@ -1,0 +1,55 @@
+<p>add-to-event works!</p>
+
+
+<div style="width: 50%;display: block;
+margin-left: auto;
+margin-right: auto;">
+
+<div class="btn-group" role="group" style=" display: flex;
+justify-content: center;
+align-items: center;">
+    <button (click)="showStudentButton()" type="button" class="btn btn-primary" >Add Student</button>
+    <button (click)="showSpeakerButton()" type="button" class="btn btn-success">Add Speaker</button>
+  </div>
+  <br>
+<div *ngIf="showStudent==1">
+    <div class="mb-3">
+        <label  class="form-label">Student Id</label>
+        <input type="number" class="form-control" [(ngModel)]="addEvent.Id" >
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Event Id</label>
+        <input type="number" class="form-control" [(ngModel)]="addEvent.eventId" >
+      </div>
+     
+      <button (click)="addStudentToEvent()" class="btn btn-primary">Add</button>
+      <br>
+      <div style="color: red;">
+          <p>{{error}}</p>
+        </div>
+        <div style="color: green;">
+            <p>{{success}}</p>
+          </div>
+</div>
+
+<div *ngIf="showSpeaker==1">
+    <div class="mb-3">
+        <label  class="form-label">Speaker Id</label>
+        <input type="number" class="form-control" [(ngModel)]="addEvent.Id" >
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Event Id</label>
+        <input type="number" class="form-control" [(ngModel)]="addEvent.eventId" >
+      </div>
+     
+      <button (click)="addSpeakerToEvent()" class="btn btn-primary">Add</button>
+      <br>
+      <div style="color: red;">
+          <p>{{error}}</p>
+        </div>
+        <div style="color: green;">
+            <p>{{success}}</p>
+          </div>
+</div>
+
+</div>

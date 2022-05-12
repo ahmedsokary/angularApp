@@ -1,0 +1,42 @@
+<p>admin-home works!</p>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hello Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link"  (click)="students()">Students </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="speakers()">Speakers </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  (click)="events()">Events </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  (click)="addToEvents()">Add To Events </a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div  *ngIf="showstudent==1">
+   <app-student></app-student>
+  </div>
+
+  <div  *ngIf="showSpeaker==1">
+   <app-speaker></app-speaker>
+   </div>
+
+   <div  *ngIf="showEvent==1">
+  <app-event></app-event>
+   </div>
+
+   <div  *ngIf="showAddToEvents==1">
+       <app-add-to-event></app-add-to-event>
+
+   </div>

@@ -1,0 +1,88 @@
+<p>event works!</p>
+
+<div style="width: 50%;display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;">
+
+<div *ngIf="showItemList==1">
+    <div class="mb-3"  *ngIf="showAddButton==0">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" [(ngModel)]="ev.id" readonly="readonly" >
+      </div>
+      <div class="mb-3"  *ngIf="showAddButton==1">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" [(ngModel)]="ev.id" >
+      </div>
+    <div class="mb-3">
+      <label  class="form-label">Title</label>
+      <input  type="text" class="form-control"  [(ngModel)]="ev.title">  
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Event data</label>
+      <input  type="text" class="form-control"  [(ngModel)]="ev.eventDate">  
+    </div>
+      <div class="mb-3">
+        <label  class="form-label"> Main Speaker</label>
+        <input type="text" class="form-control" [(ngModel)]="ev.mainSpeakerId">  
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">other Speakers Ids</label>
+        <input type="text" class="form-control"  [(ngModel)]="ev.otherSpeakersIds">  
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">students Ids</label>
+        <input type="text" class="form-control"  [(ngModel)]="ev.studentsIds">  
+      </div>
+    <button *ngIf="showAddButton==0"  class="btn btn-primary" (click)="editSpeaker()">update</button>
+
+    <button *ngIf="showAddButton==1" class="btn btn-primary" (click)="addEvent()">Add</button>
+    <br>
+    <div style="color: red;">
+        <p>{{error}}</p>
+      </div>
+</div>
+
+
+
+
+
+
+
+<table class="table"   *ngIf="showEventList==0">
+    <input (click)="addlist()"   class="btn btn-success" type="button" value="Add Event"/>
+<br>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Event Date</th>
+            <th>Main Speaker Id</th>
+            <th>other Speakers Ids</th>
+            <th>studentsIds</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of events">
+            <td>{{item._id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.eventDate}}</td>
+            <td>{{item.mainSpeakerId}}</td>
+            <td>{{item.otherSpeakersIds}}</td>
+            <td>{{item.studentsIds}}</td>
+            
+            <td>
+           <button (click)="editEventrButton(item)"   class="btn btn-primary">Edit</button>
+            </td>
+            <td>
+            <button (click)="removeEvent(item)"class="btn btn-danger" >Remove</button>
+             </td>
+        
+        </tr>
+       
+    </tbody>
+</table>
+
+</div>

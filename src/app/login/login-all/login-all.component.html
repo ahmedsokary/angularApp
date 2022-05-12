@@ -1,0 +1,36 @@
+<p>login-all works!</p>
+
+<div style="width: 50%;display: block;
+margin-left: auto;
+margin-right: auto;">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" [(ngModel)]="std.email">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="std.password">
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" (change)="type=1"  checked>
+    <label class="form-check-label" for="inlineRadio1">student</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"  (change)="type=2">
+    <label class="form-check-label" for="inlineRadio2">Speaker</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"  (change)="type=3">
+    <label class="form-check-label" for="inlineRadio2">Admin</label>
+  </div>
+ <br>
+  <button (click)="login()" class="btn btn-primary">Submit</button>
+  <a style="float: right;" class="btn btn-success" [routerLink]="['/register']" >Register</a>
+
+  <div style="color: red;">
+    <p>{{error}}</p>
+
+  </div>
+
+</div>
+ 

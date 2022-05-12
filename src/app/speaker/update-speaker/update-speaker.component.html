@@ -1,0 +1,42 @@
+<p>update-speaker works!</p>
+
+<div style="width: 50%;display: block;
+margin-left: auto;
+margin-right: auto;">
+    <div class="mb-3">
+      <label class="form-label">Id</label>
+      <input type="number" class="form-control" [(ngModel)]="spk.id">
+    </div>
+  <div class="mb-3">
+    <label  class="form-label">Email address</label>
+    <input type="email" class="form-control" [(ngModel)]="spk.email">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">userName</label>
+    <input type="text" class="form-control" [(ngModel)]="spk.userName">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="spk.password">
+  </div>
+          <label  class="form-label">Address:</label>
+  <div class="mb-3">
+    <label  class="form-label">City</label>
+    <input type="text" class="form-control" [(ngModel)]="spk.address.city" required="Please enter city">
+  
+    <label  class="form-label">Street</label>
+    <input type="text" class="form-control" [(ngModel)]="spk.address.street">
+  
+    <label  class="form-label">Building No</label>
+    <input type="number" class="form-control" [(ngModel)]="spk.address.building">
+  </div>
+  <button (click)="editSpeaker()" class="btn btn-primary">Submit</button>
+
+  <div style="color: red;">
+    <p>{{error}}</p>
+
+  </div>
+  <div style="color:green;">
+    <p>{{success}}</p>
+</div>
+  </div>

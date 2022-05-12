@@ -1,0 +1,76 @@
+<p>speaker works!</p>
+
+<div style="width: 50%;display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;">
+
+
+
+<div *ngIf="showItemList==1">
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" [(ngModel)]="spk.id" readonly="readonly" >
+      </div>
+    <div class="mb-3">
+      <label  class="form-label">Email address</label>
+      <input type="email" class="form-control" aria-describedby="emailHelp"  type="text" [(ngModel)]="spk.email">  
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Address :</label>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label"> Building No</label>
+        <input type="text" class="form-control" [(ngModel)]="spk.address.building">  
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input type="text" class="form-control"  [(ngModel)]="spk.address.street">  
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input type="text" class="form-control"  [(ngModel)]="spk.address.city">  
+      </div>
+    <button  class="btn btn-primary" (click)="editSpeaker()">update</button>
+    <br>
+    <div style="color: red;">
+        <p>{{error}}</p>
+      </div>
+</div>
+<div style="color: red;">
+    <p>{{error}}</p>
+  </div>
+
+<table class="table"  *ngIf="showSpeakerList==0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>UserName</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of speakers">
+            <td>{{item._id}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.userName}}</td>
+            <td>
+                {{item.address.building}},
+                {{item.address.street}},
+                {{item.address.city}}
+            </td>
+            <td>
+           <button (click)="editSpeakerButton(item)"   class="btn btn-primary">Edit</button>
+            </td>
+            <td>
+            <button (click)="removeSpeaker(item)"class="btn btn-danger" >Remove</button>
+             </td>
+        
+        </tr>
+       
+    </tbody>
+</table>
+</div>

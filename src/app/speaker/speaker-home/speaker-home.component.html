@@ -1,0 +1,26 @@
+<p>speaker-home works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hello {{userEmail}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link"  (click)="getEvents()">Events </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="updateStudent()">Update </a>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div  *ngIf="updateFlag==1">
+    <app-update-speaker></app-update-speaker>
+  </div>
+
+  <div  *ngIf="eventFlag==1">
+    <app-show-event></app-show-event>
+  </div>
